@@ -44,7 +44,7 @@
 		if (src.health_multiplier != 1 && src.health_multiplier > 0)
 			src.health_max = src.health_max * src.health_multiplier
 			src.health = src.health_max
-			//DEBUG ("[src.name] [log_loc(src)] has [health] health / [health_max] max health ([health_multiplier] multiplier).")
+			//DEBUG_MESSAGE("[src.name] [log_loc(src)] has [health] health / [health_max] max health ([health_multiplier] multiplier).")
 
 		return
 
