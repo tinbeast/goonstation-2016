@@ -4,7 +4,7 @@
 
 ###### These are fundamental map features that need to be checked to be working prior to submission.
 
-If these features do not work in the 2016 release then your map will be rejected and ineligible for resubmission for a full calendar month. If these features are found to not work in the latest codebase, but do work in the 2016 release, you are off the hook.
+If these features do not work in the **2016 release** then your map will be **rejected** and ineligible for resubmission for a full calendar month. If these features are found to not work in the latest codebase, but do work in the 2016 release, you are off the hook.
 
 - Crates should be able to be ordered from cargo, and arrive where expected **without player intervention**. Sitting in a few-tile conveyor "airlock"  is fine (see Destiny), sitting outside because the door did not open at all is not; missing the conveyor entirely is definitely not fine.
 
@@ -43,7 +43,7 @@ Goonstation now primarily uses pathed floors instead of instanced versions of `/
 
 ##### To convert existing maps to non-instanced format follow this simple guide.
 
-**(RECCOMENDED) ** Get a editor other than Dream Maker.
+**(RECOMMENDED)** Get a editor other than Dream Maker.
 
 1. Open the advanced Find/Replace fuctionality.
 2. Use this non-confusing RegEx in the 'Find' section: `\/turf\/(un)*simulated\/floor(?:\/plating)*(\/airless)*{(?:dir = (\d{1,10})+)*[^\n]*(?:icon_state = "yellow")+(?:; dir = (\d{1,10})+)*[\W\w]*?}`
@@ -65,9 +65,9 @@ This RegEx must be done for every floor path/icon_state in floors.dm if you want
 
 That's all to it! If you have any questions about this RegEx replace for converting maps, visit #imcoder on SynIRC or the Goonstation Discord.
 
-## Recommended
+## Recommended 
 ###### These are generally recommended map features that should probably be present in your map. If they are present, please ensure they work as intended.
 - An owlery or aviary.
-- Drains, the path is `/obj/machinery/drainage`
+- Drains, the path is `/obj/machinery/drainage`. However, you would need to make a placeholder object and not submit it along with your map.
 - Monkeys (including a place for Stirstir in the brig)
 - Functioning buddy-paths. Including a tour guide written for Murray.
