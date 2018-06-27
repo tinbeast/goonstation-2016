@@ -839,6 +839,67 @@
 	name = "Assembly Floor"
 	icon_state = "storage"
 
+/area/sim/tdome
+	name = "Thunderdome"
+	icon_state = "medbay"
+	requires_power = 0
+	sound_environment = 9
+	virtual = 1
+
+/area/sim/tdome/tdome1
+	name = "Thunderdome (Team 1)"
+	icon_state = "green"
+	sound_environment = 9
+
+/area/sim/tdome/tdome2
+	name = "Thunderdome (Team 2)"
+	icon_state = "yellow"
+	sound_environment = 9
+
+/area/sim/tdome/tdomea
+	name = "Thunderdome (Admin.)"
+	icon_state = "purple"
+	sound_environment = 9
+
+/area/sim/tdome/tdomes
+	name = "Thunderdome (Spectator)"
+	icon_state = "purple"
+	sound_environment = 9
+
+/area/diner
+	sound_environment = 12
+
+/area/diner/hangar
+	name = "Diner Parking"
+	icon_state = "storage"
+
+/area/diner/kitchen
+	name = "Diner Kitchen"
+	icon_state = "purple"
+
+/area/diner/dining
+	name = "Diner Seating Area"
+	icon_state = "yellow"
+
+/area/diner/bathroom
+	name = "Diner Bathroom"
+	icon_state = "showers"
+
+/area/tech_outpost
+	name = "Tech Outpost"
+	icon_state = "storage"
+
+/area/iss
+	name = "Derelict Space Station"
+	icon_state = "derelict"
+
+/area/abandonedship
+	name = "Abandoned ship"
+	icon_state = "yellow"
+
+/area/salyut
+	name = "Soviet derelict"
+	icon_state = "yellow"
 
 /area/station
 	do_not_irradiate = 0
