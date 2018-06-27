@@ -821,6 +821,24 @@
 
 /area/drone/zone
 
+/area/drone/crew_quarters
+	name = "Crew Quarters"
+	icon_state = "showers"
+	sound_environment = 4
+
+/area/drone/engineering
+	name = "Engineering"
+	icon_state = "yellow"
+	sound_environment = 5
+
+/area/drone/office
+	name = "Design Office"
+	icon_state = "purple"
+
+/area/drone/assembly
+	name = "Assembly Floor"
+	icon_state = "storage"
+
 
 /area/station
 	do_not_irradiate = 0
