@@ -14,6 +14,8 @@ If these features do not work in the **2016 release** then your map will be **re
 
 - Wiring and pipes (disposals, mail, brig, and morgue/crematorium, if present) should be **complete and error-free** for the most part. Obviously, it is okay if you are missing a single wire or something.
 
+- Note to above: SpyGuy and Haine made a wonderful tool to test disposal networks, it is included in the maps/ folder.
+
 - The disposals crusher blast door should be **closed** at round start (i.e. anything put down disposals at round start should not be crushed without someone opening the door).
 
 - **All areas** on station should be powered. APCs should be able to be charging if the appropriate SMES are set to output.
@@ -36,8 +38,21 @@ If these features do not work in the **2016 release** then your map will be **re
 
 - **Drains**, the path is `/obj/machinery/drainage`. It won't actually drain anything, but it'll convert into one that does.
 
+## Recommended
+###### These are generally recommended map features that should probably be present in your map. If they are present, please ensure they work as intended.
+- An owlery or aviary.
+- Monkeys spawn landmarks (including a place for Stirstir in the brig)
+- Functioning buddy-paths. Including a tour guide written for Murray/Tour Buddy.
+- If you are using perspective walls, try to minimize placing objects on the south side of rooms.
+- Blobstart, peststart, and halloweenspawn landmarks.
+- Medbay and Security should be well-thought out, daresay more so than other departments.
+- Arrivals should have more than one exit, to prevent people from being unable to join the game.
+- Cloning should follow the style of modern maps and be mostly public access.
+- Feel free to take inspiration from other maps, but please don't copy paste large parts of them.
 
 ####  Turf Replacements
+
+## Addendum: Thanks to a tool coded by qwertyqwerty, all the maps have been updated to use modern paths. So, you don't really need to use the below methods anymore, but it's there for posterity.
 
 Goonstation now primarily uses pathed floors instead of instanced versions of `/turf/simulated/floor`. For example, `/turf/simulated/floor/red/corner` is a tile that is grey with red corners in the cardinal directions for its direction states. Because of this change, maps should be primarily made from scratch and not from copied parts of old maps. It is possible to convert old maps,
 
@@ -70,15 +85,3 @@ Also, I would need to put this in my replace box:
 This RegEx must be done for every floor path/icon_state in floors.dm if you want to convert a map.
 
 That's all to it! If you have any questions about this RegEx replace for converting maps, visit #imcoder on SynIRC or the Goonstation Discord.
-
-## Recommended
-###### These are generally recommended map features that should probably be present in your map. If they are present, please ensure they work as intended.
-- An owlery or aviary.
-- Monkeys spawn landmarks (including a place for Stirstir in the brig)
-- Functioning buddy-paths. Including a tour guide written for Murray/Tour Buddy.
-- If you are using perspective walls, try to minimize placing objects on the south side of rooms.
-- Blobstart, peststart, and halloweenspawn landmarks.
-- Medbay and Security should be well-thought out, daresay more so than other departments.
-- Arrivals should have more than one exit, to prevent people from being unable to join the game.
-- Cloning should follow the style of modern maps and be mostly public access.
-- Feel free to take inspiration from other maps, but please don't copy paste large parts of them.
