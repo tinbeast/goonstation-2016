@@ -63,6 +63,10 @@ Contains:
 				if(M)
 					M.invisibility = 2
 
+		if(T.interesting)
+			playsound(T.loc, "sound/machines/ping.ogg", 55, 1)
+
+
 //////////////////////////////////////// Forensic scanner ///////////////////////////////////
 
 /obj/item/device/detective_scanner
