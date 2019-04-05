@@ -32,6 +32,14 @@ Contains:
 	if(on && !(src in processing_items))
 		processing_items.Add(src)
 
+/obj/item/device/t_scanner/afterattack(atom/A as mob|obj|turf|area, mob/user as mob)
+	if (istype(A, /turf))
+		if (get_dist(A,user) > 1) // Scanning for COOL LORE SECRETS over the camera network is fun, but so is drinking and driving.
+			return
+		if(A.interesting && src.on)
+			user.visible_message("<span style=\"color:red\"><b>[user]</b> has scanned the [A].</span>")
+			boutput(user, "<br><i>Historical analysis:</i><br><span style='color:blue'>[A.interesting]</span>") 
+			return
 
 /obj/item/device/t_scanner/process()
 	if(!on)
@@ -64,7 +72,11 @@ Contains:
 					M.invisibility = 2
 
 		if(T.interesting)
-			playsound(T.loc, "sound/machines/ping.ogg", 55, 1)
+			playsound(src, "sound/machines/ping.ogg", 55, 1)
+
+	for(var/obj/O in range(1, src.loc) )
+		if(O.interesting)
+			playsound(src, "sound/machines/ping.ogg", 55, 1)
 
 
 //////////////////////////////////////// Forensic scanner ///////////////////////////////////
