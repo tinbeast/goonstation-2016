@@ -249,6 +249,7 @@
 	var/forensic_data = null
 	var/glove_data = null
 	var/contraband_data = null
+	var/interesting_data = null
 
 	if (!A)
 		return "<span style='color:red'>ERROR: NO SUBJECT DETECTED</span>"
@@ -310,6 +311,11 @@
 
 	else
 
+		if(!A.interesting)
+			interesting_data += "<br><span style='color:blue'>Nothing else of note.</span>"
+		else
+			interesting_data += "<br><span style='color:blue'>[A.interesting]</span>"
+
 		if (!A.fingerprints)
 			fingerprint_data += "<br><span style='color:blue'>Unable to locate any fingerprints.</span>"
 		else
@@ -370,6 +376,7 @@
 	<i>Isolated blood samples:</i>[blood_data]<br>\
 	[forensic_data ? "<br><i>Additional forensic data:</i>[forensic_data]<br>" : null]\
 	[glove_data ? "<br><i>Material analysis:</i><span style='color:blue'> [glove_data]</span>" : null]\
+	[interesting_data ? "<br><i>Historical analysis:</i><span style='color:blue'> [interesting_data]</span>" : null ? ]
 	"
 
 	return data
