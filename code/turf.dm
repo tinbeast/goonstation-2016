@@ -5,8 +5,7 @@ var/global/client/ff_debugger = null
 	icon = 'icons/turf/floors.dmi'
 	var/intact = 1
 	var/allows_vehicles = 1
-	var/interesting = 0 // Whether or not this turf id going to set off lore scanners
-	var/interesting_text = "" // somewhere to put flavor text for scanners who care about interesting
+	
 	var/tagged = 0 // Gang wars thing
 
 	level = 1.0
