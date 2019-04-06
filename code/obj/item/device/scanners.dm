@@ -72,11 +72,11 @@ Contains:
 					M.invisibility = 2
 
 		if(T.interesting)
-			playsound(src, "sound/machines/ping.ogg", 55, 1)
+			playsound(src.loc, "sound/machines/ping.ogg", 55, 1)
 
 	for(var/obj/O in range(1, src.loc) )
 		if(O.interesting)
-			playsound(src, "sound/machines/ping.ogg", 55, 1)
+			playsound(src.loc, "sound/machines/ping.ogg", 55, 1)
 
 
 //////////////////////////////////////// Forensic scanner ///////////////////////////////////
