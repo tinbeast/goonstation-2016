@@ -321,7 +321,7 @@
 			if (istype(A, /obj))
 				interesting_data += "<br><span style='color:blue'>[A.interesting]</span>"
 			if (istype(A, /turf))
-				interesting_data += "<br><span style='color:blue'>There seems to be more to this [A] than meets the eye.</span>"
+				interesting_data += "<br><span style='color:blue'>There seems to be more to [A] than meets the eye.</span>"
 
 		if (!A.fingerprints)
 			fingerprint_data += "<br><span style='color:blue'>Unable to locate any fingerprints.</span>"
