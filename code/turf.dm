@@ -5,7 +5,7 @@ var/global/client/ff_debugger = null
 	icon = 'icons/turf/floors.dmi'
 	var/intact = 1
 	var/allows_vehicles = 1
-	
+
 	var/tagged = 0 // Gang wars thing
 
 	level = 1.0
@@ -199,7 +199,7 @@ var/global/client/ff_debugger = null
 	icon = 'ocean.dmi'
 	name = "seafloor"
 	water = 138771
-	temperature = T0C + 2 // average ocean temp on Earth is roughly 1-4 �C
+	temperature = T0C + 2 // average ocean temp on Earth is roughly 1-4 °C
 
 	New()
 		..()
