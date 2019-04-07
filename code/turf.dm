@@ -199,7 +199,7 @@ var/global/client/ff_debugger = null
 	icon = 'ocean.dmi'
 	name = "seafloor"
 	water = 138771
-	temperature = T0C + 2 // average ocean temp on Earth is roughly 1-4 °C
+	temperature = T0C + 2 // average ocean temp on Earth is roughly 1-4 ï¿½C
 
 	New()
 		..()
@@ -1884,3 +1884,49 @@ var/global/client/ff_debugger = null
 
 		else
 			return ..()
+
+/turf/unsimulated/floor/ledge
+	name = "ledge"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "ledge" 
+
+	CanPass(var/mob) 
+		if (istype(mob, /obj))
+			return 1
+		if (src.dir == SOUTH || src.dir == EAST || src.dir == WEST || src.dir == NORTH)
+			return get_dir(src,mob)!=src.dir // if the direction is straightforward, everything is easy
+		else
+			switch(src.dir)
+				if(NORTHEAST) // less so here
+					return !(get_dir(src,mob)==NORTH || get_dir(src,mob)==EAST)
+				if(NORTHWEST)
+					return !(get_dir(src,mob)==NORTH || get_dir(src,mob)==WEST)
+				if(SOUTHEAST)
+					return !(get_dir(src,mob)==SOUTH || get_dir(src,mob)==EAST)
+				if(SOUTHWEST)
+					return !(get_dir(src,mob)==SOUTH || get_dir(src,mob)==WEST)
+		return 1
+
+	Exited(atom/movable/Obj, atom/newloc)
+		var/i = 0
+
+		if (ishuman(Obj)) 
+			var/mob/living/carbon/human/H = Obj
+			if (!CanPass(H))
+				H.emote("flip")
+
+		for(var/atom/A as mob|obj|turf|area in range(1, src))
+		// I Said No sanity check
+			if(i >= 50)
+				break
+			i++
+			if(A.loc == src) A.HasExited(Obj, newloc)
+			A.ProximityLeave(Obj)
+
+		var/area/Ar = loc
+		if (!Ar.skip_sims)
+			if (istype(Obj, /obj/item))
+				if (!(locate(/obj/table) in src) && !(locate(/obj/rack in src)))
+					Ar.sims_score = min(Ar.sims_score + 4, 100)
+
+		return ..(Obj, newloc)
