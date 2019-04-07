@@ -1891,7 +1891,7 @@ var/global/client/ff_debugger = null
 	icon_state = "ledge" 
 
 	CanPass(var/mob) 
-		if (istype(mob, /obj))
+		if (istype(mob, /obj)) // throwing things over the ledges is fine. now go get it. 
 			return 1
 		if (src.dir == SOUTH || src.dir == EAST || src.dir == WEST || src.dir == NORTH)
 			return get_dir(src,mob)!=src.dir // if the direction is straightforward, everything is easy
@@ -1910,7 +1910,7 @@ var/global/client/ff_debugger = null
 	Exited(atom/movable/Obj, atom/newloc)
 		var/i = 0
 
-		if (ishuman(Obj)) 
+		if (ishuman(Obj)) // Time to make it obvious you hopped over
 			var/mob/living/carbon/human/H = Obj
 			if (!CanPass(H))
 				H.emote("flip")
