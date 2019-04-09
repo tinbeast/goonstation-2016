@@ -1930,3 +1930,51 @@ var/global/client/ff_debugger = null
 					Ar.sims_score = min(Ar.sims_score + 4, 100)
 
 		return ..(Obj, newloc)
+
+/turf/unsimulated/floor/warp/exitance   //the exit tile of a set of warps
+	var/id = null
+	New()
+		..()
+		if (!id)
+			id = "generic"
+
+		src.tag = "warpout_[id]"
+
+/turf/unsimulated/floor/warp/entrance   //trigger tile of a set of warps
+	var/id = null
+	New()
+		..()
+		if (!id)
+			id = "generic"
+
+		src.tag = "warpin_[id]"
+
+	Entered(var/atom/movable/A)
+		var/turf/exit = locate("warpout_[id]")
+		if (!istype(exit))
+			return
+		A.set_loc(exit)
+
+/turf/unsimulated/floor/warp/z2
+	var/targetZ = 2 
+	Entered(var/atom/movable/A)
+		var/turf/exit = locate(src.x, src.y, src.targetZ)
+		if (!istype(exit))
+			return
+		A.set_loc(exit)
+
+	stairs
+		name = "stairs"
+		icon_state = "quiltystair"
+
+/turf/unsimulated/floor/warp/z1
+	var/targetZ = 1
+	Entered(var/atom/movable/A)
+		var/turf/exit = locate(src.x, src.y, src.targetZ)
+		if (!istype(exit))
+			return
+		A.set_loc(exit)
+
+	stairs
+		name = "stairs"
+		icon_state = "quiltystair"
