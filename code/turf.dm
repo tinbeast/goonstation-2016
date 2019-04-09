@@ -1933,12 +1933,35 @@ var/global/client/ff_debugger = null
 
 /turf/unsimulated/floor/warp/exitance   //the exit tile of a set of warps
 	var/id = null
+	var/turf/T
 	New()
 		..()
 		if (!id)
 			id = "generic"
 
 		src.tag = "warpout_[id]"
+
+		T = locate("warpin_[id]")
+		updateVis()
+
+	Entered()
+		updateVis()
+
+	Exited()
+		updateVis()
+
+	proc/updateVis()
+		if(T)
+			T.overlays.Cut()
+			T.vis_contents = list()
+			for(var/atom/A in src.contents)
+				if (istype(A, (/obj/overlay)))
+					continue
+				if (istype(A, (/mob/dead)))
+					continue
+				if (istype(A, (/mob/living/intangible)))
+					continue
+				T.vis_contents += A
 
 /turf/unsimulated/floor/warp/entrance   //trigger tile of a set of warps
 	var/id = null
@@ -1951,6 +1974,8 @@ var/global/client/ff_debugger = null
 
 	Entered(var/atom/movable/A)
 		var/turf/exit = locate("warpout_[id]")
+		if (istype(A, /obj/overlay))
+			return
 		if (!istype(exit))
 			return
 		A.set_loc(exit)
@@ -1959,6 +1984,8 @@ var/global/client/ff_debugger = null
 	var/targetZ = 2 
 	Entered(var/atom/movable/A)
 		var/turf/exit = locate(src.x, src.y, src.targetZ)
+		if (istype(A, /obj/overlay))
+			return
 		if (!istype(exit))
 			return
 		A.set_loc(exit)
@@ -1971,6 +1998,8 @@ var/global/client/ff_debugger = null
 	var/targetZ = 1
 	Entered(var/atom/movable/A)
 		var/turf/exit = locate(src.x, src.y, src.targetZ)
+		if (istype(A, /obj/overlay))
+			return
 		if (!istype(exit))
 			return
 		A.set_loc(exit)
