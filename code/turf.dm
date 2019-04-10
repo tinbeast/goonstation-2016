@@ -48,6 +48,8 @@ var/global/client/ff_debugger = null
 	var/pathable = 1
 
 	var/image/camera_image = null
+	var/turf/vistarget = null	// target turf for projecting its contents elsewhere 
+	var/turf/warptarget = null // target turf for teleporting its contents elsewhere
 
 	onMaterialChanged()
 		..()
@@ -89,6 +91,36 @@ var/global/client/ff_debugger = null
 		F["[path].pixel_y"] >> pixel_y
 		return DESERIALIZE_OK
 
+	Entered(var/atom/movable/A)
+		if(warptarget)
+			if (istype(A, /obj/overlay))
+				return
+			A.set_loc(warptarget)
+		updateVis()
+		
+	Exited(var/atom/movable/A)
+		updateVis()
+	
+	proc/updateVis() // locates all appropriate objects on this turf, and pushes them to the vis_contents of the target
+		if(vistarget)
+			vistarget.overlays.Cut()
+			vistarget.vis_contents = list()
+			for(var/atom/A in src.contents)
+				if (istype(A, (/obj/overlay)))
+					continue
+				if (istype(A, (/mob/dead)))
+					continue
+				if (istype(A, (/mob/living/intangible)))
+					continue
+				vistarget.vis_contents += A
+/* // this might work 
+	proc/updateVis() // locates all appropriate objects on this turf, and pushes them to the vis_contents of the target
+		if(vistarget)
+			vistarget.contents = list()
+			vistarget.vis_contents = list()
+			for(var/atom/A in src.contents)
+				vistarget.vis_contents += A
+*/
 /obj/overlay/tile_effect
 	name = ""
 	anchored = 1
@@ -1931,79 +1963,3 @@ var/global/client/ff_debugger = null
 
 		return ..(Obj, newloc)
 
-/turf/unsimulated/floor/warp/exitance   //the exit tile of a set of warps
-	var/id = null
-	var/turf/T
-	New()
-		..()
-		if (!id)
-			id = "generic"
-
-		src.tag = "warpout_[id]"
-
-		T = locate("warpin_[id]")
-		updateVis()
-
-	Entered()
-		updateVis()
-
-	Exited()
-		updateVis()
-
-	proc/updateVis()
-		if(T)
-			T.overlays.Cut()
-			T.vis_contents = list()
-			for(var/atom/A in src.contents)
-				if (istype(A, (/obj/overlay)))
-					continue
-				if (istype(A, (/mob/dead)))
-					continue
-				if (istype(A, (/mob/living/intangible)))
-					continue
-				T.vis_contents += A
-
-/turf/unsimulated/floor/warp/entrance   //trigger tile of a set of warps
-	var/id = null
-	New()
-		..()
-		if (!id)
-			id = "generic"
-
-		src.tag = "warpin_[id]"
-
-	Entered(var/atom/movable/A)
-		var/turf/exit = locate("warpout_[id]")
-		if (istype(A, /obj/overlay))
-			return
-		if (!istype(exit))
-			return
-		A.set_loc(exit)
-
-/turf/unsimulated/floor/warp/z2
-	var/targetZ = 2 
-	Entered(var/atom/movable/A)
-		var/turf/exit = locate(src.x, src.y, src.targetZ)
-		if (istype(A, /obj/overlay))
-			return
-		if (!istype(exit))
-			return
-		A.set_loc(exit)
-
-	stairs
-		name = "stairs"
-		icon_state = "quiltystair"
-
-/turf/unsimulated/floor/warp/z1
-	var/targetZ = 1
-	Entered(var/atom/movable/A)
-		var/turf/exit = locate(src.x, src.y, src.targetZ)
-		if (istype(A, /obj/overlay))
-			return
-		if (!istype(exit))
-			return
-		A.set_loc(exit)
-
-	stairs
-		name = "stairs"
-		icon_state = "quiltystair"

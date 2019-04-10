@@ -3,34 +3,15 @@ stuff from quebec
 */
 
 
-/turf/unsimulated/floor/euclidean
-	name = "floor"
-	desc = "this floor should do things"
-	var/targetZ = 1
-	var/xOffset = 0
-	var/yOffset = 0
-	var/turf/T = null
+/obj/landmark/viscontents_spawn
+	name = "visual mirror spawn"
+	desc = "Causes turfs to push their contents to another turf's vis_contents, then goes bye-bye."
+	var/targetZ = 1 // target z-level to push it's contents to
+	var/xOffset = 0 // use only for pushing to the same z-level
+	var/yOffset = 0 // use only for pushing to the same z-level
 
 	New()
-		..()
-		T = locate((src.x + xOffset), (src.y + yOffset), src.targetZ)
-		updateVis()
-
-	Entered()
-		updateVis()
-
-	Exited()
-		updateVis()
-
-	proc/updateVis()
-		if(T)
-			T.overlays.Cut()
-			T.vis_contents = list()
-			for(var/atom/A in src.contents)
-				if (istype(A, (/obj/overlay)))
-					continue
-				if (istype(A, (/mob/dead)))
-					continue
-				if (istype(A, (/mob/living/intangible)))
-					continue
-				T.vis_contents += A
+		var/turf/greasedupFrenchman = loc
+		greasedupFrenchman.vistarget = locate(src.x + xOffset, src.y + yOffset, src.targetZ)
+		greasedupFrenchman.vistarget.warptarget = greasedupFrenchman
+		qdel(src) // vaccinate your children
