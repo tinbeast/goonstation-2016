@@ -34,12 +34,6 @@
 	icon = 'maps/placeholders/map_placeholders.dmi'
 	icon_state = "lab_counter"
 
-/obj/table/reinforced/bar
-	name = "bar table"
-	desc = "just a placeholder for now, ignore the bad sprite"
-	icon = 'maps/placeholders/map_placeholders.dmi'
-	icon_state = "bar_table"
-
 /obj/table/glass
 	name = "glass table"
 	desc = "just a placeholder for now, ignore the bad sprite"
