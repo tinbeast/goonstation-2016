@@ -1198,6 +1198,5 @@ var/datum/preMapLoad/preMapLoad = new
 #include "libs\Base64\hexadecimal.dm"
 #include "libs\Base64\text.dm"
 #include "maps\_disposaltester.dm"
-#include "maps\ksolwreck.dmm"
 #include "maps\config\map.dm"
 // END_INCLUDE
