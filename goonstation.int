@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1555644758
-DIR: code code\chui\example code\datums\buildmodes code\datums\buildmodes\adventure code\datums\buildmodes\adventure\elements code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs\health code\datums\gamemodes code\datums\genetics maps maps\placeholders 
+LAST_COMPILE_TIME: 1557015185
+DIR: code code\chui\example code\datums\buildmodes code\datums\buildmodes\adventure code\datums\buildmodes\adventure\elements code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs\health code\datums\gamemodes code\datums\genetics code\WorkInProgress config maps maps\config 
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 512.1397
-WINDOW: maps\gehenna.dmm
-FILE: maps\gehenna.dmm
+WINDOW: maps\gehenna.dmm;maps\config\standard.dm
+FILE: maps\config\standard.dm
 */
 // END_INTERNALS

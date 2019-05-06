@@ -22,7 +22,7 @@ stuff from quebec
 	desc = "Looks really dry out there."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "mars1"
-	carbon_dioxide = 10
+	carbon_dioxide = 2
 	temperature = 340
 	RL_Ignore = 0
 	var/rocks = 1
@@ -43,6 +43,7 @@ stuff from quebec
 		desc = "The desert slowly creeps upon everything we build."
 		icon = 'icons/turf/floors.dmi'
 		icon_state = "plating_dusty3"
+		rocks = 0
 
 /turf/unsimulated/floor/gehenna/ledge
 	name = "ledge"
