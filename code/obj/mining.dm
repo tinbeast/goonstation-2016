@@ -878,6 +878,9 @@
 	var/list/space_overlays = list()
 	RL_Ignore = 1
 
+	lighted
+		RL_Ignore = 0
+
 	ice
 		name = "comet chunk"
 		desc = "That's some cold stuff right there."
@@ -1141,6 +1144,9 @@
 	var/sprite_variation = 1
 	var/stone_color = null
 	var/image/coloration_overlay = null
+
+	lighted
+		RL_Ignore = 0
 
 	New()
 		..()
