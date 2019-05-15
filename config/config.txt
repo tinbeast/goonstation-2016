@@ -65,16 +65,16 @@ VOTE_PERIOD 60
 ALLOW_AI
 
 # disable abandon mob
-NORESPAWN
+RESPAWN
 
 # set a hosted by name for unix platforms
-HOSTEDBY Galactic Order of Oppressive Neckbeards
+HOSTEDBY h h h h h
 
 # name
 #SERVERNAME Gibbed
-SERVERNAME LLJK-510
-SERVERSUFFIX
-SERVERREGION US
+SERVERNAME Garbage Jhon's Mapping Emporium
+SERVERSUFFIX 
+SERVERREGION QC-CAN
 
 ENV prod
 
