@@ -35,6 +35,7 @@ var/datum/preMapLoad/preMapLoad = new
 #include "code\hub.dm"
 #include "code\mob.dm"
 #include "code\obj.dm"
+#include "code\placeholders_horizon.dm"
 #include "code\pooling.dm"
 #include "code\revision.dm"
 #include "code\RobustLight2.dm"
