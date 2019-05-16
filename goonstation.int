@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1557968038
+LAST_COMPILE_TIME: 1557972575
 DIR: code code\chui\example code\datums\buildmodes code\datums\buildmodes\adventure code\datums\buildmodes\adventure\elements code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs\health code\datums\gamemodes code\datums\genetics maps maps\config 
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 512.1397
-WINDOW: maps\config\standard.dm;code\placeholders_horizon.dm
-FILE: maps\config\standard.dm
+WINDOW: maps\config\standard.dm;code\placeholders_horizon.dm;maps\horizon.dmm;maps\cogmap2.dmm
+FILE: maps\horizon.dmm
 */
 // END_INTERNALS
