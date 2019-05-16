@@ -1,6 +1,12 @@
 /obj/machinery/computer/tetris
 	name = "Placeholder for /obj/machinery/comp/tetris"
 
+/obj/machinery/air_vendor
+	name = "Placeholder for /obj/machinery/air_vendor"
+
+obj/machinery/disposal_pipedispenser/mobile
+	name = "Placeholder for obj/machinery/disposal_pipedispenser/mobile"
+
 /obj/decal/poster/wallsign/medal
 	name = "Placeholder for /obj/decal/poster/wallsign/medal"
 
