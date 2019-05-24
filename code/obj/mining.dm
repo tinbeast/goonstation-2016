@@ -884,6 +884,9 @@
 		stone_color = "#D1E6FF"
 		default_ore = /obj/item/raw_material/ice
 
+	lighted
+		RL_Ignore = 0
+
 	geode
 		name = "compacted stone"
 		desc = "This rock looks really hard to dig out."
@@ -1141,6 +1144,9 @@
 	var/sprite_variation = 1
 	var/stone_color = null
 	var/image/coloration_overlay = null
+
+	lighted
+		RL_Ignore = 0
 
 	New()
 		..()
