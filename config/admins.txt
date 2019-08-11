@@ -4,7 +4,10 @@ stuntwaffle - Host
 pantaloons - Host
 darsant - Host
 nannek - Host
+johnwarcrimes - Host
 
+ursulamajor - Coder
+hydrofloric - Coder
 exadv1 - Coder
 0staf - Coder
 justicefries - Coder
