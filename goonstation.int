@@ -1,11 +1,12 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1557368456
-DIR: .git code code\chui\example code\datums code\datums\buildmodes code\datums\buildmodes\adventure code\datums\buildmodes\adventure\elements code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs\health code\datums\gamemodes code\datums\genetics config maps maps\config 
+MAP_ZOOM: 1.000
+LAST_COMPILE_TIME: 1557015185
+DIR: code code\chui\example code\datums code\datums\buildmodes code\datums\buildmodes\adventure code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs\health code\datums\gamemodes code\datums\genetics ud5 
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 512.1397
-WINDOW: maps\config\standard.dm;maps\pelican_r115a.dmm
-FILE: maps\pelican_r115a.dmm
+WINDOW: code\turf.dm
+FILE: code\turf.dm
 */
 // END_INTERNALS
