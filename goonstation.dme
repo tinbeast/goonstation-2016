@@ -250,6 +250,7 @@ var/datum/preMapLoad/preMapLoad = new
 #include "code\datums\buildmodes\adventure\element_bases.dm"
 #include "code\datums\buildmodes\adventure\element_link.dm"
 #include "code\datums\buildmodes\adventure\target_link.dm"
+#include "code\datums\buildmodes\adventure\urs_dungeon.dm"
 #include "code\datums\buildmodes\adventure\elements\button.dm"
 #include "code\datums\buildmodes\adventure\elements\delay.dm"
 #include "code\datums\buildmodes\adventure\elements\door.dm"
@@ -1204,4 +1205,5 @@ var/datum/preMapLoad/preMapLoad = new
 #include "maps\adv_test.dmm"
 #include "maps\config\map.dm"
 #include "maps\placeholders\map_placeholders.dm"
+#include "ud5\z7_urs_dungeon_5.dmm"
 // END_INCLUDE
