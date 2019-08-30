@@ -1,12 +1,12 @@
 // BEGIN_INTERNALS
 /*
 MAP_ZOOM: 1.000
-LAST_COMPILE_TIME: 1567136922
-DIR: code code\chui\example code\datums code\datums\buildmodes code\datums\buildmodes\adventure code\datums\buildmodes\adventure\elements code\datums\buildmodes\adventure\elements\trap code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs icons icons\misc icons\obj ud5 
+LAST_COMPILE_TIME: 1567156759
+DIR: code code\chui\example code\datums code\datums\buildmodes code\datums\buildmodes\adventure code\datums\buildmodes\adventure\elements code\datums\buildmodes\adventure\elements\door code\datums\buildmodes\adventure\elements\trap code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs code\obj code\obj\storage code\WorkInProgress code\WorkInProgress\recycling icons icons\obj ud5 
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 512.1467
-WINDOW: code\datums\buildmodes\adventure\urs_dungeon.dm;icons\obj\puzzletile.dmi;ud5\z7_urs_dungeon_5.dmm
+WINDOW: code\datums\buildmodes\adventure\urs_dungeon.dm;ud5\z7_urs_dungeon_5.dmm;code\datums\buildmodes\adventure\element_link.dm;code\datums\buildmodes\adventure\elements\door\multiactivated.dm;code\datums\buildmodes\adventure\elements\pressurepad.dm;code\obj\storage\closets.dm;code\obj\storage\large_storage_parent.dm
 FILE: ud5\z7_urs_dungeon_5.dmm
 */
 // END_INTERNALS

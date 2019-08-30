@@ -9,6 +9,12 @@
 
 	New()
 		..()
+		if(triggerer) // accidentally setting these ids on the map is so common that i'm gonna cry
+			triggerer_id = triggerer
+			triggerer = null
+		if(triggerable)
+			triggerable_id = triggerable
+			triggerable = null
 		spawn(1)
 			src.link_elements()
 			spawn(10)

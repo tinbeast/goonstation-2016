@@ -450,3 +450,14 @@
 			if ("rblue")
 				src.remove_blue()
 				return
+
+/obj/storage/closet/syndi/hidden/shovel_me
+
+	attack_hand(mob/user as mob)
+		return
+
+	attackby(obj/item/W as obj, mob/user as mob)
+		if (istype(W, /obj/item/shovel))
+			user.visible_message("<span style=\"color:blue\">[user] digs in [src] with [W]!</span>")
+			src.open()
+		return

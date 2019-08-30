@@ -28,6 +28,7 @@
 
 /obj/adventurepuzzle/triggerable/door/multiactivated
 	var/act_count = 0
+	var/allow_negative = 0
 	var/act_needed = 1
 	var/static/list/triggeracts_multi = list("Close" = "close", "Decrease activation count" = "dec", "Do nothing" = "nop", "Increase activation count" = "inc", "Lock open" = "secopen", "Open" = "open", "Toggle" = "toggle")
 
@@ -39,12 +40,14 @@
 
 	trigger(var/act)
 		if (act == "dec")
-			if (act_count > 0)
-				act_count--
-				if (act_count < act_needed)
-					close()
+			if(allow_negative)
+				act_count = act_count - 1
+			else if (act_count > 0)
+				act_count = act_count - 1
+			if (act_count < act_needed)
+				close()
 		else if (act == "inc")
-			act_count++
+			act_count = act_count + 1
 			if (act_count >= act_needed)
 				open()
 		else ..()
