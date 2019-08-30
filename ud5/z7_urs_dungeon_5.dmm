@@ -787,7 +787,7 @@
 "pg" = (/turf/unsimulated/floor/wizard/carpet/edge{icon_state = "carpet_edge"; dir = 10},/area/adventure/urs_dungeon)
 "ph" = (/turf/unsimulated/floor/wizard/carpet/edge,/area/adventure/urs_dungeon)
 "pi" = (/turf/unsimulated/floor/wizard/carpet/edge{icon_state = "carpet_edge"; dir = 6},/area/adventure/urs_dungeon)
-"pj" = (/obj/machinery/teleport/portal_ring{density = 0; icon_state = "tele1"},/obj/adventurepuzzle/triggerer/trigger{id = "tele-trigger"},/obj/adventurepuzzle/invisible/target_link{triggerable_id = "tele-lightning"},/obj/adventurepuzzle/element_link{act_type = "act"; triggerable_id = "tele-lightning"; triggerer_id = "tele-trigger"},/obj/adventurepuzzle/element_link,/turf/unsimulated/floor/darkblue,/area/adventure/urs_dungeon)
+"pj" = (/obj/machinery/teleport/portal_ring{density = 0; icon_state = "tele1"},/obj/adventurepuzzle/triggerer/trigger{id = "tele-trigger"},/obj/adventurepuzzle/invisible/target_link{triggerable_id = "tele-lightning"},/obj/adventurepuzzle/element_link{act_type = "act"; triggerable_id = "tele-lightning"; triggerer_id = "tele-trigger"},/obj/adventurepuzzle/element_link{act_type = "speak"; triggerable_id = "tele-speaker"; triggerer_id = "tele-trigger"},/turf/unsimulated/floor/darkblue,/area/adventure/urs_dungeon)
 "pk" = (/obj/table/auto,/obj/decal/fakeobjects/lighttube_broken{icon_state = "tube-broken"; dir = 8},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
 "pl" = (/obj/machinery/vending/mechanics,/turf/unsimulated/floor/yellow{dir = 4},/area/adventure/urs_dungeon)
 "pm" = (/obj/machinery/manufacturer/mechanic,/turf/unsimulated/floor/yellow{dir = 4},/area/adventure/urs_dungeon)
@@ -813,17 +813,17 @@
 "pG" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing/medical_director,/obj/item/shovel,/turf/unsimulated/floor/blue,/area/adventure/urs_dungeon)
 "pH" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing/research_director,/obj/item/rubberduck,/turf/unsimulated/floor/blue,/area/adventure/urs_dungeon)
 "pI" = (/obj/storage/cart/mechcart,/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
-"pJ" = (/obj/rack,/obj/item/clothing/suit/fire,/obj/item/clothing/mask/gas/emergency,/obj/critter/mimic,/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"pJ" = (/obj/rack,/obj/item/clothing/suit/fire,/obj/item/clothing/mask/gas/emergency,/obj/critter/mimic,/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
 "pK" = (/obj/decal/tile_edge/line/red{icon_state = "tile1"; dir = 9},/turf/unsimulated/floor/caution,/area/adventure/urs_dungeon)
 "pL" = (/obj/computerframe{name = "smashed computer"; desc = "It is highly unlikely that this still works."; icon = 'icons/obj/computer.dmi'; icon_state = "datamedb"; dir = 4; anchored = 1},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
 "pM" = (/obj/stool/chair{icon_state = "office_chair"; dir = 8},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
 "pN" = (/obj/machinery/door/airlock/pyro/engineering{dir = 8; name = "Construction Supplies"},/obj/access_spawn/engineering,/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
-"pO" = (/obj/table/auto,/obj/item/storage/toolbox/emergency,/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
-"pP" = (/obj/table/auto,/obj/item/storage/toolbox/electrical,/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"pO" = (/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
+"pP" = (/obj/decal/fakeobjects/firelock_broken{density = 1; desc = "The only firelock in this damn place, and it's busted. Figures."; dir = 8; icon_state = "door1"; opacity = 1},/obj/machinery/door/airlock/pyro/engineering{dir = 8},/obj/access_spawn/engineering,/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
 "pQ" = (/obj/computerframe{name = "smashed computer"; desc = "It is highly unlikely that this still works."; icon = 'icons/obj/computer.dmi'; icon_state = "datamedb"; dir = 4; anchored = 1},/obj/decal/fakeobjects/lighttube_broken{icon_state = "tube-broken"; dir = 8},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
 "pR" = (/obj/machinery/door/airlock/pyro/command,/obj/access_spawn/heads,/obj/creepy_sound_trigger,/turf/unsimulated/floor/neutral,/area/adventure/urs_dungeon)
-"pS" = (/obj/storage/secure/closet/engineering/welding,/obj/storage/secure/closet/engineering/welding,/obj/storage/secure/closet/engineering/welding,/obj/item/reagent_containers/food/drinks/fueltank,/obj/item/reagent_containers/food/drinks/fueltank,/obj/item/reagent_containers/food/drinks/fueltank,/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
-"pT" = (/obj/reagent_dispensers/fueltank,/obj/decal/fakeobjects/lighttube_broken{icon_state = "tube-broken"; dir = 4},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"pS" = (/obj/decal/fakeobjects/lighttube_broken{icon_state = "tube-broken"; dir = 8},/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
+"pT" = (/obj/adventurepuzzle/triggerer/twostate/pressurepad{desc = "This mousetrap has been superglued to the ground."; icon = 'icons/obj/weapons.dmi'; icon_state = "mousetraparmed"; id = "weldbombtrap"},/obj/adventurepuzzle/element_link{act_type = "act"; triggerable_id = "weldbomb"; triggerer_id = "weldbombtrap"},/obj/adventurepuzzle/element_link{act_type = "start"; triggerable_id = "weldbombstop"; triggerer_id = "weldbombtrap"},/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
 "pU" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing/hop,/obj/item/game_kit,/turf/unsimulated/floor/darkblue,/area/adventure/urs_dungeon)
 "pV" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing/chief_engineer,/obj/item/zippo,/turf/unsimulated/floor/blue,/area/adventure/urs_dungeon)
 "pW" = (/obj/table/wood/round,/obj/item/paper{icon_state = "paper"; info = "If anyone ever finds this, please tell me mom that I knew I should have been a lion tamer instead of a security guard."; name = "To whom it may concern"},/turf/unsimulated/floor/blue,/area/adventure/urs_dungeon)
@@ -831,7 +831,7 @@
 "pY" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing,/obj/item/flamethrower,/turf/unsimulated/floor/blue,/area/adventure/urs_dungeon)
 "pZ" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing,/obj/item/storage/box/cocktail_umbrellas,/obj/item/storage/box/cocktail_doodads,/obj/item/storage/box/beer,/turf/unsimulated/floor/blue,/area/adventure/urs_dungeon)
 "qa" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing,/obj/item/whistle,/turf/unsimulated/floor/blue,/area/adventure/urs_dungeon)
-"qb" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing,/obj/item/gnomechompski,/turf/unsimulated/floor/blue/corner,/area/adventure/urs_dungeon)
+"qb" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing,/obj/item/gnomechompski{name = "Gnelf Cnophski"},/turf/unsimulated/floor/blue/corner,/area/adventure/urs_dungeon)
 "qc" = (/turf/unsimulated/floor/blue/side,/area/adventure/urs_dungeon)
 "qd" = (/obj/storage/secure/closet/personal,/obj/item/storage/box/clothing,/obj/item/mop,/turf/unsimulated/floor/blue/corner{icon_state = "bluecorner"; dir = 8},/area/adventure/urs_dungeon)
 "qe" = (/turf/unsimulated/floor/blue/side{icon_state = "blue"; dir = 4},/area/adventure/urs_dungeon)
@@ -954,6 +954,17 @@
 "sr" = (/obj/decal/fakeobjects/lighttube_broken{icon_state = "tube-broken"; dir = 8},/obj/decal/tile_edge/stripe/extra_big{icon_state = "xtra_bigstripe-edge"; dir = 1},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
 "ss" = (/obj/decal/tile_edge/stripe/extra_big{icon_state = "xtra_bigstripe-edge"; dir = 1},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
 "st" = (/obj/storage/cart/mechcart,/obj/decal/tile_edge/stripe/extra_big{icon_state = "xtra_bigstripe-edge"; dir = 1},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"su" = (/obj/adventurepuzzle/triggerable/targetable/fireballtrap{id = "weldbomb"; power = 1},/turf/unsimulated/wall/auto/supernorn,/area/adventure/urs_dungeon)
+"sv" = (/obj/adventurepuzzle/triggerer/button{id = "ared"},/obj/adventurepuzzle/element_link{act_type = "ared"; triggerable_id = "test_tile"; triggerer_id = "ared"},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"sw" = (/obj/adventurepuzzle/triggerer/button{id = "agreen"},/obj/adventurepuzzle/element_link{act_type = "agreen"; triggerable_id = "test_tile"; triggerer_id = "agreen"},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"sx" = (/obj/adventurepuzzle/triggerable/puzzletile{id = "test_tile"},/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
+"sy" = (/obj/adventurepuzzle/triggerer/button{id = "ablue"},/obj/adventurepuzzle/element_link{act_type = "ablue"; triggerable_id = "test_tile"; triggerer_id = "ablue"},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"sz" = (/obj/adventurepuzzle/triggerer/button{id = "rred"},/obj/adventurepuzzle/element_link{act_type = "rred"; triggerable_id = "test_tile"; triggerer_id = "rred"},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"sA" = (/obj/adventurepuzzle/triggerer/button{id = "rgreen"},/obj/adventurepuzzle/element_link{act_type = "rgreen"; triggerable_id = "test_tile"; triggerer_id = "rgreen"},/turf/unsimulated/floor/yellow,/area/adventure/urs_dungeon)
+"sB" = (/obj/adventurepuzzle/triggerer/button{id = "rblue"},/obj/adventurepuzzle/element_link{act_type = "rblue"; triggerable_id = "test_tile"; triggerer_id = "rblue"},/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
+"sC" = (/obj/adventurepuzzle/triggerable/triggerer/delay{id = "weldbombstop"; periodic = 0; time_delay = 5},/obj/adventurepuzzle/element_link{act_type = "off"; triggerable_id = "weldbomb"; triggerer_id = "weldbombstop"},/turf/unsimulated/wall/auto/supernorn,/area/adventure/urs_dungeon)
+"sD" = (/obj/storage/secure/closet/engineering/welding,/obj/item/reagent_containers/food/drinks/fueltank,/obj/item/reagent_containers/food/drinks/fueltank,/obj/item/reagent_containers/food/drinks/fueltank,/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
+"sE" = (/obj/reagent_dispensers/fueltank,/obj/machinery/light{dir = 4; icon_state = "tube1"; layer = 9.1; pixel_x = 10},/obj/adventurepuzzle/invisible/target_link{triggerable_id = "weldbomb"},/turf/simulated/floor/yellow,/area/adventure/urs_dungeon)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaaaaaaaaaaaaabababababababababababababababababababababababababababababababababab
@@ -1027,13 +1038,13 @@ ababababababababababababaaaaaektkbkukvkwaenRhlhlhlhlozaekxjakxaeigigpFrbrbsgshsi
 ababababababababababababaaaaaekSkbnEkbkUaenRnXhlqjhlpxaeaeaeaeaeoTigaerbrbrbrbrbrbsksjaekVjxkWjxkXkYjAkZjylalblciPldlelfiTiUlglhiPiNaeoGoGigigaeaaaaabababababaaaakJkKkKkKkKkKkKkKkKkKkKkKkKkKkKkKkJaaaaababab
 ababababababababababababaaaaaelikbljkbkUaepwhlhlnXhlozaepGqkpHaeigigaeaerurbrbrbslaerzaelmlnjliNjljTkBloiTkijljEjFlpjHlqkBlrjllsjlkzaeoGigigigaeaaaaabababababaaaakJnGkKkKkKkKkKkKkKkKkKkKkKkKkKltkJaaaaababab
 ababababababababababababaaaaaelukbkbkblvaenRhlhlhlhloziCqlrAqmaeigigpIaeaeaeaeaeaeaerBaelwjKjFjGjFlxjFjKjFjKjFlqiPlyjejfjdjcjilzlAiOaeoGigigpaaeaaaaabababababaaaakJkKkKkKkKkKkKkKkKkKkKkKkKkKkKkKkJaaaaababab
-ababababababababababababaaaaaelBkckclClDaenRhlnXhlhlozaekxqnkxaeigigpIaepJigpJigigaehlaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeoTigigigaeaaaaabababababaaaakJkKkKkKkKkKkKkKkKkKkKkKkKkKkKkKkJaaaaababab
-ababababababababababababaaaaaeaeaeaeaeaeaenRhlhlhlhlozaeaeaeaeaesmsnsoaeoTigigigigaerCaelElElElElElElElElElElElElElElElElElElElElElEaepLpMigigaeaaaaabababababaaaalFkrkrkrkrkrkrkrkrkrkrkrkrkrkrkrlGaaaaababab
-ababababababababababababaaaaaeiZmBmBmBmBmBqohlhlhlhlqpmBmBmBnFaehlhlhlpNigigpOpPigaeaeaelElElElElElElElElElElElElElElElElElElElElElEaepQpMigpaaeaaaaabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababab
-ababababababababababababaaaaaenRhlhlnXhlhlhlhlhlnXhlhlhlhlnXozilhlhlspaeigigpPpOigaesqlIlElElJlElKlElJnilKlElJlElKlEnjlElLlElJlElElEiligigigigaeaaaaabababababaaaaaaaaaaaaaaaakqkrkrkrksaaaaaaaaaaaaaaaaababab
-ababababababababababababaaaaaeqqqrqrqsqrqrqrqsqrqrqrqsqrqrqrqtaesrssstaeoTigigigigaeaeaelElElElElElElElElElElElElElElElElElElElElElEaepLpMigigaeaaaaabababababababababababaaaakJkKlMkKkJaaaaababababababababab
-ababababababababababababaaaalNlNpRaeaeaeeTaeaeaeeTaeaeaeeTaeaeaeigigpIaepJigpJigigpSpTaelElElElElElElElElElElElElElElElElElElElElElEaepQpMigigaeaaaaabababababababababababaaaakJlPkKlQkJaaaaababababababababab
-ababababababababababababaaaalNlRfHpUaelTgcpVaelVgciJaelWgclXaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaelYaeaeaelZaeaemambmcaeaeaeaeaeaeaemdmeaeaaaaabababababababababababaaaakJkKkKkKkJaaaaababababababababab
+ababababababababababababaaaaaelBkckclClDaenRhlnXhlhlozaekxqnkxaeigigpIaepJpOpJpOsvaehlaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeoTigigigaeaaaaabababababaaaakJkKkKkKkKkKkKkKkKkKkKkKkKkKkKkKkJaaaaababab
+ababababababababababababaaaaaeaeaeaeaeaeaenRhlhlhlhlozaeaeaeaeaesmsnsoaepSpOpOpOswaerCaelElElElElElElElElElElElElElElElElElElElElElEaepLpMigigaeaaaaabababababaaaalFkrkrkrkrkrkrkrkrkrkrkrkrkrkrkrlGaaaaababab
+ababababababababababababaaaaaeiZmBmBmBmBmBqohlhlhlhlqpmBmBmBnFaehlhlhlpNpTpOsxpOsyaeaeaelElElElElElElElElElElElElElElElElElElElElElEaepQpMigpaaeaaaaabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababab
+ababababababababababababaaaaaenRhlhlnXhlhlhlhlhlnXhlhlhlhlnXozpPhlhlspaepOpOpOpOszaesqlIlElElJlElKlElJnilKlElJlElKlEnjlElLlElJlElElEiligigigigaeaaaaabababababaaaaaaaaaaaaaaaakqkrkrkrksaaaaaaaaaaaaaaaaababab
+ababababababababababababaaaaaeqqqrqrqsqrqrqrqsqrqrqrqsqrqrqrqtaesrssstaepSpOpOpOsAaeaeaelElElElElElElElElElElElElElElElElElElElElElEaepLpMigigaeaaaaabababababababababababaaaakJkKlMkKkJaaaaababababababababab
+ababababababababababababaaaalNlNpRaeaeaeeTaeaeaeeTaeaeaeeTaeaeaeigigpIaepJpOpJpOsBsDsEsulElElElElElElElElElElElElElElElElElElElElElEaepQpMigigaeaaaaabababababababababababaaaakJlPkKlQkJaaaaababababababababab
+ababababababababababababaaaalNlRfHpUaelTgcpVaelVgciJaelWgclXaeaeaeaeaeaeaesCaeaeaeaeaeaeaeaeaeaeaeaeaeaelYaeaeaelZaeaemambmcaeaeaeaeaeaeaemdmeaeaaaaabababababababababababaaaakJkKkKkKkJaaaaababababababababab
 ababababababababababababaaaalNmffHmgaejagcgcaejagcgcaepWgcgcaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababaaaakJmimimikJaaaaababababababababab
 ababababababababababababaaaalNmjmkpXaelTmmpYaelVmmpZaelWmmqaaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababaaaakJkKkKkKkJaaaaababababababababab
 ababababababababababababaaaalNlNaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaaaaababababababababababababababababababababababababababababababababababababababababababababababababababababaaaakJmimimikJaaaaababababababababab

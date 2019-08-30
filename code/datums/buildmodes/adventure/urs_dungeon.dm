@@ -303,3 +303,150 @@
 /area/adventure/urs_dungeon
 	teleport_blocked = 1
 	virtual = 0
+
+
+/obj/adventurepuzzle/triggerable/puzzletile
+	icon = 'icons/obj/puzzletile.dmi'
+	icon_state = "tile_border"
+	name = "Colored Tile"
+	desc = "Some kind of coloured tile."
+	density = 0
+	opacity = 0
+	anchored = 1
+	var/icon/tile = icon('icons/obj/puzzletile.dmi',"tile")
+
+
+	var/is_on = 1
+
+	var/red = 0
+	var/green = 0
+	var/blue = 0
+
+	var/static/list/triggeracts = list("Do nothing" = "nop", "Toggle" = "toggle", "Turn on" = "on", "Turn off" = "off", "Add Red" = "ared", "Remove Red" = "rred","Add Blue" = "ablue", "Remove Blue" = "rblue", "Add Green" = "agreen", "Remove Green" = "rgreen")
+
+	New()
+		..()
+		underlays += src.tile
+		update_color()
+
+
+	proc/on()
+		if (!is_on)
+			is_on = 1
+			update_color()
+
+	proc/off()
+		if (is_on)
+			is_on = 0
+			update_color()
+
+	proc/toggle()
+		if (is_on)
+			off()
+		else
+			on()
+
+	proc/add_red()
+		if(red<3)
+			red++
+			update_color()
+
+	proc/remove_red()
+		if(red>0)
+			red--
+		update_color()
+
+	proc/add_blue()
+		if(blue<3)
+			blue++
+		update_color()
+
+	proc/remove_blue()
+		if(blue>0)
+			blue--
+		update_color()
+
+	proc/add_green()
+		if(green<3)
+			green++
+		update_color()
+
+	proc/remove_green()
+		if(green>0)
+			green--
+		update_color()
+
+	proc/update_color()
+		var/new_color = "#"
+
+		if(!is_on)
+			new_color = "#000000"
+		else
+			switch (red)
+				if(0)
+					new_color += "88"
+				if(1)
+					new_color += "AA"
+				if(2)
+					new_color += "CC"
+				if(3)
+					new_color += "FF"
+
+			switch (green)
+				if(0)
+					new_color += "88"
+				if(1)
+					new_color += "AA"
+				if(2)
+					new_color += "CC"
+				if(3)
+					new_color += "FF"
+
+			switch (blue)
+				if(0)
+					new_color += "88"
+				if(1)
+					new_color += "AA"
+				if(2)
+					new_color += "CC"
+				if(3)
+					new_color += "FF"
+
+		underlays -= src.tile
+		var/icon/I = icon('icons/obj/puzzletile.dmi',"tile")
+		I.Blend(new_color,ICON_ADD)
+		src.tile = I
+		underlays += src.tile
+
+	trigger_actions()
+		return triggeracts
+
+	trigger(var/act)
+		switch (act)
+			if ("on")
+				src.on()
+				return
+			if ("off")
+				src.off()
+				return
+			if ("toggle")
+				src.toggle()
+				return
+			if ("ared")
+				src.add_red()
+				return
+			if ("rred")
+				src.remove_red()
+				return
+			if ("agreen")
+				src.add_green()
+				return
+			if ("rgreen")
+				src.remove_green()
+				return
+			if ("ablue")
+				src.add_blue()
+				return
+			if ("rblue")
+				src.remove_blue()
+				return

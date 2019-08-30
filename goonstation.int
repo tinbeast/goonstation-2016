@@ -1,12 +1,12 @@
 // BEGIN_INTERNALS
 /*
 MAP_ZOOM: 1.000
-LAST_COMPILE_TIME: 1565543623
-DIR: code code\chui\example code\datums code\datums\buildmodes code\datums\buildmodes\adventure code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs\health code\datums\gamemodes code\datums\genetics ud5 
+LAST_COMPILE_TIME: 1567136922
+DIR: code code\chui\example code\datums code\datums\buildmodes code\datums\buildmodes\adventure code\datums\buildmodes\adventure\elements code\datums\buildmodes\adventure\elements\trap code\datums\chemistry code\datums\chemistry\tools code\datums\critter_mobs icons icons\misc icons\obj ud5 
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
-LAST_COMPILE_VERSION: 512.1470
-WINDOW: code\turf.dm;ud5\z7_urs_dungeon_5.dmm
+LAST_COMPILE_VERSION: 512.1467
+WINDOW: code\datums\buildmodes\adventure\urs_dungeon.dm;icons\obj\puzzletile.dmi;ud5\z7_urs_dungeon_5.dmm
 FILE: ud5\z7_urs_dungeon_5.dmm
 */
 // END_INTERNALS
