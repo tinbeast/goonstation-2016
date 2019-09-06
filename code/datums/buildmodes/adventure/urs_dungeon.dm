@@ -241,13 +241,11 @@
 
 	proc/exit_urs_dungeon(var/mob/living/carbon/human/H)
 
-		var/area/thearea = /area/station/crew_quarters/arcade
-
 		H.u_equip(src)
 		src.set_loc(get_turf(H))
 
 		var/list/L = list()
-		for (var/turf/T3 in get_area_turfs(thearea.type))
+		for (var/turf/T3 in get_area_turfs(/area/station/crew_quarters,0))
 			if (!T3.density)
 				var/clear = 1
 				for (var/obj/O in T3)
@@ -257,16 +255,27 @@
 				if (clear)
 					L += T3
 
-		for(var/mob/O in AIviewers(src, null)) O.show_message("<span style=\"color:red\">[H.name] disappears in a flash of light!!</span>", 1)
+		if(!(L.len > 0))
+			for (var/turf/T3 in get_area_turfs(/area/station,0))
+				if (!T3.density)
+					var/clear = 1
+					for (var/obj/O in T3)
+						if (O.density)
+							clear = 0
+							break
+					if (clear)
+						L += T3
+
+		for(var/mob/O in AIviewers(H, null)) O.show_message("<span style=\"color:red\">[H.name] disappears in a flash of light!!</span>", 1)
 		playsound(src.loc, "sound/weapons/flashbang.ogg", 50, 1)
 
-		for (var/mob/N in viewers(src, null))
+		for (var/mob/N in viewers(H, null))
 			if (get_dist(N, src) <= 6)
 				N.apply_flash(20, 1)
 			if (N.client)
 				shake_camera(N, 6, 4)
 
-		src.set_loc(pick(L))
+		H.set_loc(pick(L))
 
 		return
 
