@@ -193,10 +193,7 @@
 		return
 
 	proc/enter_urs_dungeon(var/mob/living/carbon/human/H)
-		if(target && H.mind)
-
-			var/datum/mind/M = H.mind
-
+		if(target)
 			H.u_equip(src)
 			src.set_loc(get_turf(H))
 
@@ -208,18 +205,9 @@
 				if (N.client)
 					shake_camera(N, 6, 4)
 
-			var/orig_dnr = M.dnr
-
-			if (orig_dnr)
-				M.dnr = 0
-
-			H.unkillable = 1
+			H.unequip_all()
 			H.set_loc(src.target)
-			H.firegib()
-			spawn(1)
-				var/mob/living/carbon/human/new_H = M.current
-				new_H.unkillable = 0
-				M.dnr = orig_dnr
+
 		return
 
 /obj/item/clothing/glasses/urs_dungeon_exit
@@ -316,14 +304,12 @@
 
 /obj/adventurepuzzle/triggerable/puzzletile
 	icon = 'icons/obj/puzzletile.dmi'
-	icon_state = "tile_border"
+	icon_state = "canvas"
 	name = "Colored Tile"
 	desc = "Some kind of coloured tile."
 	density = 0
 	opacity = 0
 	anchored = 1
-	var/icon/tile = icon('icons/obj/puzzletile.dmi',"tile")
-
 
 	var/is_on = 1
 
@@ -335,7 +321,6 @@
 
 	New()
 		..()
-		underlays += src.tile
 		update_color()
 
 
@@ -389,7 +374,7 @@
 		var/new_color = "#"
 
 		if(!is_on)
-			new_color = "#000000"
+			new_color = "#222222"
 		else
 			switch (red)
 				if(0)
@@ -421,11 +406,45 @@
 				if(3)
 					new_color += "FF"
 
-		underlays -= src.tile
-		var/icon/I = icon('icons/obj/puzzletile.dmi',"tile")
-		I.Blend(new_color,ICON_ADD)
-		src.tile = I
-		underlays += src.tile
+		for(var/u in src.underlays)
+			src.underlays -= u
+
+		for(var/o in src.overlays)
+			src.overlays -= o
+
+		src.appearance_flags |= RESET_TRANSFORM
+		src.appearance_flags |= RESET_COLOR
+		src.appearance_flags |= PIXEL_SCALE
+		src.appearance_flags &= ~KEEP_TOGETHER
+
+		src.icon_state = "ring_inner"
+		src.transform = matrix().Turn(40*red)
+		src.overlays += src
+
+		src.icon_state = "ring_middle"
+		src.transform = matrix().Turn(40*red + 40*green)
+		src.overlays += src
+
+		src.icon_state = "ring_outer"
+		src.transform = matrix().Turn(40*red + 40*green + 40*blue)
+		src.overlays += src
+
+		src.transform = null
+
+		src.icon_state = "tile_border"
+		src.overlays += src
+
+		src.icon_state = "tile"
+		src.color = new_color
+		src.overlays += src
+		src.color = null
+
+		src.icon_state = "canvas"
+
+		src.appearance_flags &= ~RESET_TRANSFORM
+		src.appearance_flags &= ~RESET_COLOR
+		src.appearance_flags &= ~PIXEL_SCALE
+		src.appearance_flags |= KEEP_TOGETHER
 
 	trigger_actions()
 		return triggeracts
@@ -470,3 +489,99 @@
 			user.visible_message("<span style=\"color:blue\">[user] digs in [src] with [W]!</span>")
 			src.open()
 		return
+
+/obj/item/ursium
+	name = "Magnetic Storage Ring"
+	desc = "This thing pulses with a truly awesome power byond your wildest imagination."
+	icon = 'icons/misc/ud5.dmi'
+	icon_state = "urs_prize"
+	opacity = 0
+	density = 0
+	anchored = 0.0
+	var/ursium = 0
+	var/s_time = 1.0
+	var/content = null
+
+/obj/item/ursium/proc/convert2energy(var/M)
+	var/c_squared = 9e+16
+	var/E = M*(c_squared)
+	return E
+
+/obj/item/ursium/U
+	name = "Ursium storage ring"
+	content = "Ursium"
+	ursium = 1e-12		//pico-kilogram
+
+/obj/item/ursium/antiU
+	name = "Anti-Ursium storage ring"
+	content = "Anti-Ursium"
+	ursium = 1e-12		//pico-kilogram
+	color = "#555555"
+
+/obj/item/ursium/attackby(obj/item/ursium/F, mob/user)
+	if(istype(src, /obj/item/ursium/antiU))
+		if(istype(F, /obj/item/ursium/antiU))
+			src.ursium += F.ursium
+			F.ursium = 0
+			boutput(user, "You have added the anti-Ursium to the storage ring, it now contains [src.ursium]kg")
+		if(istype(F, /obj/item/ursium/U))
+			src.ursium += F.ursium
+			qdel(F)
+			src:annihilation(src.ursium)
+	if(istype(src, /obj/item/ursium/U))
+		if(istype(F, /obj/item/ursium/U))
+			src.ursium += F.ursium
+			F.ursium = 0
+			boutput(user, "You have added the Ursium to the storage ring, it now contains [src.ursium]kg")
+		if(istype(F, /obj/item/ursium/antiU))
+			src.ursium += F.ursium
+			qdel(src)
+			F:annihilation(F.ursium)
+
+/obj/item/ursium/antiU/proc/annihilation(var/mass)
+
+	var/strength = src.convert2energy(mass)
+
+	if (strength < 773.0)
+		var/turf/T = get_turf(src.loc)
+
+		if (strength > (450+T0C))
+			explosion(src, T, 0, 1, 2, 4)
+		else
+			if (strength > (300+T0C))
+				explosion(src, T, 0, 0, 2, 3)
+
+		qdel(src)
+		return
+
+	var/turf/ground_zero = get_turf(loc)
+
+	var/ground_zero_range = round(strength / 387)
+	explosion(src, ground_zero, ground_zero_range, ground_zero_range*2, ground_zero_range*3, ground_zero_range*4)
+
+	//SN src = null
+	qdel(src)
+	return
+
+
+/obj/item/ursium/examine()
+	set src in view(1)
+	if(usr && !usr.stat)
+		boutput(usr, "A magnetic storage ring, it contains [ursium]kg of [content ? content : "nothing"].")
+	..() // CALL YOUR PARENTS
+
+/obj/item/ursium/proc/injest(mob/M as mob)
+	M.gib(1)
+	qdel(src)
+	return
+
+/obj/item/ursium/attack(mob/M as mob, mob/user as mob)
+	if (user != M)
+		user.visible_message("<span style=\"color:red\">[user] is trying to force [M] to eat the [src.content]!</span>")
+		if (do_mob(user, M, 40))
+			user.visible_message("<span style=\"color:red\">[user] forced [M] to eat the [src.content]!</span>")
+			src.injest(M)
+	else
+		for(var/mob/O in viewers(M, null))
+			O.show_message(text("<span style=\"color:red\">[M] ate the [content ? content : "empty canister"]!</span>"), 1)
+		src.injest(M)
